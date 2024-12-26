@@ -5,10 +5,10 @@ export function middleware(request: NextRequest) {
   const currentUrl = request.nextUrl.clone();
 
   // 1. Redirect to a new path
-  // if (request.nextUrl.pathname === "/ping") {
-  //   currentUrl.pathname = "/pong";
-  //   return NextResponse.rewrite(currentUrl);
-  // }
+  if (request.nextUrl.pathname === "/ping") {
+    currentUrl.pathname = "/pong";
+    return NextResponse.redirect(currentUrl);
+  }
 }
 
 // export const config = {
