@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
 
   // 2. Rewrite the path
   if (request.nextUrl.pathname === "/ping") {
-    currentUrl.pathname = "/pong";
+    currentUrl.pathname = "/posts/new";
     return NextResponse.rewrite(currentUrl);
   }
 }
